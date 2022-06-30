@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+:root{
+    --primary :white;
+    --secondory: rgb(224, 221, 221);
+    --primary_btn: rgb(251, 138, 39) ;
+    --dark :rgb(27, 24, 24);
+    --bg1: rgb(250, 229, 229);
+    --hvr: #d21717;
+    --pink:#F94C66;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ .form_bg{
+    background: #000428;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+ }
+
+ .header-bg {
+    background: #485563;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+ }
+.footer-bg {
+    background: #283048;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+nav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: var(--primary);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 10000;
+}
+nav .logo img {
+    width: 4.5rem;
+}
+nav .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+nav .menu ul li a {
+  text-decoration: none;
+  color: var(--dark);
+  transition: all .3s ease-in-out;
+}
+nav .menu ul li a:hover {
+    font-size: 1.3rem;
+    font-size: 600;
+  color: var(--hvr);
+}
+
+nav .menu ul li .cart_btn{
+    position: relative;
+   background: #F94C66;
+   color: var(--primary);
+   padding: 0.6rem;
+   font-size: 1.34rem;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+nav .menu ul li .cart_btn:hover{
+    color: var(--dark);
+}
+
+nav .menu ul li .cart_btn:after{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 50%;
+   height: 50%;
+   /* background-color: red; */
+   border-top: 1.3px dashed var(--dark);
+   border-left: 1.3px dashed var(--dark);
+    animation: blink 3s linear  infinite;
+}
+
+nav .menu ul li .cart_btn::before{
+    position: absolute;
+   content: '';
+   right: 0;
+   bottom: 0;
+   width: 50%;
+   height: 50%;
+   /* background-color: var(--dark); */
+   border-bottom: 1.3px dashed var(--dark);
+   border-right: 1.3px dashed var(--dark);
+    animation: blink 3s ease-in  infinite alternate;
+}
+
+ /* animations  */
+@keyframes blink {
+    from{
+        border: 0;
+    }
+    to{
+        border-width: 2px;
+    }
+}
+
+nav .menu ul li .cart_btn span{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 14px;
+    background-color: #53BF9D;
+   padding-left: 5px;
+   padding-right: 5px;
+   border-radius: 0 0px 0px 6px;
+}
+
+
+/* ----------- hero section --  */
+.hero_section {
+    background: var(--bg1);
+    padding-top: 1rem;
+}
+.hero-info  h6{
+    font-family: 'Yellowtail', cursive;
+    font-size: 2.3rem;
+}
+.hero-info  h1{
+    font-family: 'Staatliches', cursive;
+    font-size: 5rem;
+}
+.hero-info  .order-btn{
+   text-align: center;
+   text-decoration: none;
+   text-transform: uppercase;
+   border: 1px solid rgb(255, 136, 0);
+   padding: 0.5rem;
+   border-radius: 1.6rem;
+   background: var(--pink);
+   color: var(--dark);
+   letter-spacing: 1px;
+   font-weight: 600;
+   transition: all .3s ease-in-out;
+}
+.hero-info  .order-btn:hover{
+background-color: var(--dark);
+color: var(--primary);
+border: 1.4px dashed var(--primary);
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hero-img {
+overflow: hidden;
+}
+.hero-img img {
+ width: 100% ;
+ animation: rotate 10s  linear infinite alternate;
+}
+
+
+/* animation of rotate hero img  */
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* ########## prd-list style  */
+.prd-list .card {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+border: 1px solid rgb(222, 221, 221);
+transition: all 0.3s ease-in-out;
+border-radius: 0px;
+}
+.prd-list .card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.prd-list .prd-photo{
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.prd-list img{
+    width: 70%;
+}
+
+.prd-list .prd-name h5{
+text-align: center;
+color: rgb(75, 75, 75);
+font-weight: 400;
+font-weight:bold;
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.prd-list .size{
+text-align: center;
+background: var(--secondory);
+padding: 0.2rem;
+border-radius: .5rem;
+}
+
+.prd-list .prd-order{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+margin-bottom: 3px;
+}
+
+.prd-list .prd-order .price{
+font-weight: 600;
+letter-spacing: 0.4px;
+font-size: 18px;
+
+}
+.prd-list .prd-order button{
+display: flex;
+width: 28%;
+justify-content: space-evenly;
+text-align: center;
+padding: 5px;
+background: var(--pink);
+border-radius: 1.6rem;
+outline: none;
+border: 1.3px dashed black;
+font-weight: 600;
+color: #fff;
+}
+.prd-list .prd-order button:hover{
+border: 1.5px solid black;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+ 
+/* ------ loginb ------  */
+.account_sec {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    height: calc(100vh - 200px);
+}
+
+.account_sec .login {
+   width: 50%;
+}
+
+.account_sec .login .card {
+ 
+    border-radius: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.account_sec .login .card h4 {
+    font-family: 'Staatliches', cursive;
+    letter-spacing: 1.32px;
+    color: var(--pink);
+    font-size: 2rem;
+    text-shadow: 0px 2px 1px rgb(27, 24, 24);
+}
+
+.account_sec .login .card form label {
+color: var(--primary);
+}
+.account_sec .login .card form a {
+ text-decoration: none;
+ text-transform: capitalize;
+}
+
+.btn-login {
+    background: var(--pink);
+    padding: 0.4rem;
+    width: 6rem;
+    border-radius: 6rem;
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn-login:hover {
+   background: var(--hvr);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ========= cart_sec =====  */
+
+.cart_sec {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    height: calc(100vh - 150px);
+}
+.cart_sec .card{
+    width: 60%;
+    border-radius: 0;
+    box-shadow: 0 4px 8px 0 rgba(47, 160, 10, 0.2), 0 6px 20px 0 rgba(164, 34, 34, 0.19),
+    0 3px 8px 0 rgba(179, 42, 197, 0.2),
+    1px 3px 8px 0 rgba(58, 175, 238, 0.2),
+    0 3px 8px 0 rgba(248, 94, 94, 0.2),
+    0 3px 8px 0 rgba(120, 225, 136, 0.2);
+}
+.cart_sec .card .card-header{
+    border-bottom: 1.3px dotted rgb(226, 226, 234);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    background-color: red;
+    border-radius: 0;
+    color: var(--primary);
+  padding-top: 15px !important;
+}
+.cart_sec .card .card-body{
+    padding: 0;
+  padding-left: 0.1rem;
+  padding-right: 0.2rem;
+  
+}
+.cart_sec .card .product-box{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1.9px dashed rgb(150, 146, 146);
+   transition: all 0.3s ease-in-out;
+}
+
+.cart_sec .card .product-box:hover{
+ background: rgba(221, 221, 221, 0.519);
+}
+.cart_sec .card .card-footer span{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.cart_sec .card .card-footer button{
+    background: #FF512F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #DD2476, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #DD2476, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: var(--primary);
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 6rem;
+    border: none;
+    outline: none;
+    box-shadow: 0 4px 8px 0 rgba(255, 251, 251, 0.2), 0 6px 20px 0 rgba(238, 228, 228, 0.19);
+    }
+.cart_sec .card .card-footer button:hover{
+    background: #cb391c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #984168, #c82f11);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #984168, #c82f11); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: var(--primary);
+    font-weight: 600;
+    padding: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 6rem;
+    border: none;
+    outline: none;
+    box-shadow: 0 4px 8px 0 rgba(255, 251, 251, 0.2), 0 6px 20px 0 rgba(238, 228, 228, 0.19);
+    }
+
+/* ----- footer ---  */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: var(--dark);
+    margin-top: 1rem;
+    color: var(--primary);
+}
+footer a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+@media screen And (max-width:700px) {
+    nav .logo img {
+        width: 3.5rem;
+    }
+
+    .offer_btn{
+        display: none;
+    }
+    nav .menu ul li .cart_btn span{
+     font-size: 11px;
+       border-radius: 0 0px 0px 6px;
+    }
+
+    .hero_section  {
+        height: calc(100vh - 60px);
+        padding: 0;
+    }
+    .hero_section .hero {
+        flex-direction: column;
+    }
+    .hero-info  h1{
+        font-family: 'Staatliches', cursive;
+        font-size: 3rem;
+    }
+    .hero-info  {
+      text-align: center;
+    }
+ 
+    .hero-img img {
+        display: flex;
+        width: 259px;
+        justify-content: center;
+        align-items: center;
+       
+       }
+
+       /* login  */
+       .account_sec .login {
+        width: 100%;
+     }
+
+      /* cart page  */
+      .cart_sec .card{
+        width: 96%;
+    }
+
+}
