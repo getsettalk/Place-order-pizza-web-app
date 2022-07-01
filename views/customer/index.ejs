@@ -17,98 +17,32 @@
         <h4>All Pizza List :</h4> 
         <div class="prd-list">
             <div class="row gy-3">
-                <div class="col-12 col-md-4 col-lg-3">
-                    <div class="card ">
-                        <div class="prd-photo">
-                            <img src="/pd-img/pz.png"  class="img-fluid" alt="prd">
-                        </div>
-                        <div class="prd-name">
-                            <h5>Mushroom and Pepperoni Pie</h5>
-                        </div>
-                        <div class="size">Medium</div>
-                        <div class="prd-order">
-                            <span class="price">₹555</span>
-                            <button class="text-center">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
+                <% pizzas.forEach(function(pizza){ %>
+
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card ">
+                            <div class="prd-photo">
+                                <img src="/pd-img/<%= pizza.image %> "  class="img-fluid" alt="prd">
+                            </div>
+                            <div class="prd-name">
+                                <h5><%= pizza.name %>  </h5>
+                            </div>
+                            <div class="size"><%= pizza.size %> </div>
+                            <div class="prd-order">
+                                <span class="price">₹<%= pizza.price %> </span>
+                                <button class="text-center">
+                                    <span>+</span>
+                                    <span>Add</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                <% }) %>
+
+               
                 
-                <div class="col-12 col-md-4 col-lg-3">
-                    <div class="card">
-                        <div class="prd-photo">
-                            <img src="/pd-img/p1 (3).png" class="img-fluid" alt="prd">
-                        </div>
-                        <div class="prd-name">
-                           <h5>Italian Sausage Pan Pizza </h5>
-                        </div>
-                        <div class="size">Medium</div>
-                        <div class="prd-order">
-                            <div class="price"> ₹555</div>
-                            <button class="text-center">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 col-lg-3">
-                    <div class="card">
-                        <div class="prd-photo">
-                            <img src="/pd-img/p1 (4).png" class="img-fluid" alt="prd">
-                        </div>
-                        <div class="prd-name">
-                           <h5>Pizza Margherita</h5>
-                        </div>
-                        <div class="size">Medium</div>
-                        <div class="prd-order">
-                            <div class="price"> ₹555</div>
-                            <button class="text-center">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 col-lg-3">
-                    <div class="card">
-                        <div class="prd-photo">
-                            <img src="/pd-img/p1 (3).png" class="img-fluid" alt="prd">
-                        </div>
-                        <div class="prd-name">
-                           <h5> White Clam Pie</h5>
-                        </div>
-                        <div class="size">Medium</div>
-                        <div class="prd-order">
-                            <div class="price"> ₹555</div>
-                            <button class="text-center">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-12 col-md-4 col-lg-3">
-                    <div class="card">
-                        <div class="prd-photo">
-                            <img src="/pd-img/p1 (3).png" class="img-fluid" alt="prd">
-                        </div>
-                        <div class="prd-name">
-                           <h5> The Detroiter</h5>
-                        </div>
-                        <div class="size">Medium</div>
-                        <div class="prd-order">
-                            <div class="price"> ₹555</div>
-                            <button class="text-center">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+               
                 
                 
             </div>

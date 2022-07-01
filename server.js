@@ -1,14 +1,38 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require("path")
 const expressLayout = require('express-ejs-layouts');
 const port = process.env.PORT || 3000;
+const connection = require('./app/config/db')
+
+const session = require('express-session');
+const flash = require('express-flash');
+const MongoStore = require('connect-mongo');
+
 
 // setting up some static or required method or function
 app.use(express.static(path.join(__dirname,"/public")));
 app.use(expressLayout);
 app.set('views','views');
 app.set('view engine', 'ejs')
+
+
+
+// session for save in cart
+app.use(
+    session({
+    secret: process.env.COOKIE_KEY,
+    resave:false,
+    saveUninitialized:false,
+    cookie: {maxAge: 1000*60*60*24}, // 24  hours
+    store : MongoStore.create({
+        mongoUrl: process.env.dbUrl,
+        collectionName: 'sessions'
+    }) // store session new method
+})
+);
+app.use(flash());
 
 
 // routes requested url send to web.js 

@@ -1,8 +1,13 @@
+const menu = require('../../models/menu');
+
 function  HomeController(){
     return {
         // this is like object send method
-        index(req,res){
-            res.render("customer/index");
+      async  index(req,res){
+                const pizzas = await menu.find();
+                // console.log( await menu.find().count())
+                return res.render("customer/index",{pizzas:pizzas});
+         
         }
     }
 }

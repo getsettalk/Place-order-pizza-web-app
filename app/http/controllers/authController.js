@@ -7,7 +7,7 @@ function  authController(){
         },
 
         register(req,res){
-            res.render("auth/ac");
+            res.render("auth/register");
         }
     }
 }
