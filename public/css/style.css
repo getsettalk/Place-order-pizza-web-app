@@ -129,6 +129,7 @@ nav .menu ul li .cart_btn span{
    padding-left: 5px;
    padding-right: 5px;
    border-radius: 0 0px 0px 6px;
+   z-index: 1;
 }
 
 

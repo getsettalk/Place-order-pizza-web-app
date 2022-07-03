@@ -13,12 +13,7 @@ const MongoStore = require('connect-mongo');
 
 // setting up some static or required method or function
 app.use(express.static(path.join(__dirname,"/public")));
-app.use(expressLayout);
-app.set('views','views');
-app.set('view engine', 'ejs')
-
-
-
+app.use(express.json());
 // session for save in cart
 app.use(
     session({
@@ -33,6 +28,20 @@ app.use(
 })
 );
 app.use(flash());
+
+// globel middlewere for send client session data
+app.use((req,res,next)=>{
+    res.locals.session= req.session;
+    next();
+})
+
+app.use(expressLayout);
+app.set('views','views');
+app.set('view engine', 'ejs')
+
+
+
+
 
 
 // routes requested url send to web.js 

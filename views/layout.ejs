@@ -20,7 +20,7 @@
             <li> <a href="/">Home</a>
             <li class="offer_btn"> <a href="/offer">offer</a>
             <li> <a href="/ac">Account</a>
-            <li > <a href="/cart" class="cart_btn"><i class="bi bi-cart-check-fill"></i> <span>0</span></a>
+            <li > <a href="/cart" class="cart_btn"><i class="bi bi-cart-check-fill"></i> <span id="cartCounter"><%= session.cart ? session.cart.totalQty :'' %></span></a>
             </li>
         </ul>
     </div>
@@ -31,6 +31,7 @@
      Made with ❤️ By : <a href="https://www.instagram.com/scarlet_sujeet/" target="_blank" > Scarlet_sujeet</a>
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script  src="/js/main.js"></script>
 </body>
 </html>

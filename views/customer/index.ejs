@@ -30,7 +30,7 @@
                             <div class="size"><%= pizza.size %> </div>
                             <div class="prd-order">
                                 <span class="price">₹<%= pizza.price %> </span>
-                                <button class="text-center">
+                                <button data-pizza="<%= JSON.stringify(pizza) %>" class="text-center add-to-cart">
                                     <span>+</span>
                                     <span>Add</span>
                                 </button>

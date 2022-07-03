@@ -16,6 +16,8 @@ function initRoutes(app){
     // cart page 
     app.get("/cart",cartController().index)
 
+    app.post('/update-cart',cartController().update)
+
 }
 
 module.exports = initRoutes;
