@@ -1,3 +1,5 @@
+
+
 function  authController(){
     return {
         // this is like object send method
@@ -7,6 +9,10 @@ function  authController(){
         },
 
         register(req,res){
+            res.render("auth/register");
+        },
+        newUserregister(req,res){
+            
             res.render("auth/register");
         }
     }

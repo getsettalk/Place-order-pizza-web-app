@@ -9,10 +9,12 @@ const connection = require('./app/config/db')
 const session = require('express-session');
 const flash = require('express-flash');
 const MongoStore = require('connect-mongo');
+const { urlencoded } = require('express');
 
 
 // setting up some static or required method or function
 app.use(express.static(path.join(__dirname,"/public")));
+app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 // session for save in cart
 app.use(

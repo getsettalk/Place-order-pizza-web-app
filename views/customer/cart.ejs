@@ -1,49 +1,32 @@
  <!-- --- product cart added  section --  -->
+ <% if(session.cart){ %> 
   <section class="cart_sec mt-3">
    
-      <div class="card">
+      <div class="card mt-5">
         <div class="card-header header-bg text-light">
            <h4> Order Summary</h4>
         </div>
         <div class="card-body">
+           <% for(let pizza of Object.values(session.cart.items)){ %>
             <div class="product-box">
-                <div class="prd-photot">
-                    <img src="pd-img/pz.png" alt="product" width="70px"  height="auto"> 
+                <div class="prd-photo">
+                    <img src="pd-img/<%= pizza.item.image %> " alt="product" width="70px"  height="auto"> 
+                    <div class="">
+                        <div><%= pizza.item.name %></div>
+                        <smail><%= pizza.item.size %></smail>
+                    </div>
                 </div>
                 <div class="prd-quantity text-center">
-                 <span>  1PC</span>
+                 <span><%= pizza.qty %>PC</span>
                 </div>
                 <div class="prd-price text-center">
-                 <span> ₹5552</span>
+                 <span> ₹<%= pizza.item.price * pizza.qty %></span>
                 </div>
 
             </div>
-            <div class="product-box">
-                <div class="prd-photot">
-                    <img src="pd-img/pizza.png" alt="product" width="70px"  height="auto"> 
-                </div>
-                <div class="prd-quantity text-center">
-                 <span>  1PC</span>
-                </div>
-                <div class="prd-price text-center">
-                 <span> ₹5552</span>
-                </div>
-
-            </div>
-            <div class="product-box">
-                <div class="prd-photot">
-                    <img src="pd-img/pz.png" alt="product" width="70px"  height="auto"> 
-                </div>
-                <div class="prd-quantity text-center">
-                 <span>  1PC</span>
-                </div>
-                <div class="prd-price text-center">
-                 <span> ₹5552</span>
-                </div>
-
-            </div>
+            <% } %>
             <div class="total float-end p-2 fw-bold">
-                Total Amount : ₹56356
+                Total Amount : ₹<%=session.cart.totalPrice%>
             </div>
         </div>
         <div class="card-footer footer-bg">
@@ -67,7 +50,8 @@
       </div>
 
   </section>
- 
+ <% }else{ %> 
   <section class="no_cart text-center mt-5">
     <h5>No have any Product in Cart</h5>
   </section>
+  <% }%> 

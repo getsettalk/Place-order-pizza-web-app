@@ -10,8 +10,10 @@ function initRoutes(app){
     // all controller has already define in controller folder
     app.get("/ac",authController().login)
 
-    // register page of user 
+    // register page of user  show
     app.get("/register",authController().register)
+    // now register new user
+    app.post("/register",authController().newUserregister)
 
     // cart page 
     app.get("/cart",cartController().index)
