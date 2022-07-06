@@ -1,8 +1,18 @@
 <!-- --- login or signUp section --  -->
     <section class="account_sec">
     <div class="login">
+        <% if(messages.error){ %> 
+           <div class="alert alert-danger text-center fw-bold">
+            <%= messages.error  %> 
+           </div>
+            <% } %> 
+        <% if(messages.success){ %> 
+           <div class="alert alert-success text-center fw-bold">
+            <%= messages.success  %> 
+           </div>
+            <% } %> 
         <div class="card p-4 form_bg">
-            <form action="">
+            <form action="/ac" method="post">
                 <div class="text-center">
                   <h4>  Login in Your Account</h4>
                 </div>
@@ -12,8 +22,9 @@
                         <input type="email" name="email" id="email" class="form-control">
                     </div>
                     <div class="col-12 mt-3">
-                        <label for="email">Password:</label>
-                        <input type="password " name="password" id="password" class="form-control">
+                        <label for="password">Password:</label>
+                      
+                        <input type="password" name="password" id="password" class="form-control">
                     </div>
                     <div class="col-12 mt-3 d-flex justify-content-between align-items-center">
                       <button type="submit" class=" btn-login">Login</button>

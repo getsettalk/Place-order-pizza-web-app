@@ -18,9 +18,17 @@
     </div>
     <div class="menu">
         <ul>
-            <li> <a href="/">Home</a>
+            <li> <a href="/">Home</a> </li> 
             <li class="offer_btn"> <a href="/offer">offer</a>
-            <li> <a href="/ac">Account</a>
+                <% if(user) {%> 
+                    <li> 
+                        <form action="/logout" id="logout" method="POST">
+                            <a onclick="document.getElementById('logout').submit()" href="#" >Logout</a>
+                        </form>
+                        </li> 
+                <% }else{ %> 
+               <li> <a href="/ac">Account</a> </li> 
+                <% } %> 
             <li > <a href="/cart" class="cart_btn"><i class="bi bi-cart-check-fill"></i> <span id="cartCounter"><%= session.cart ? session.cart.totalQty :'' %></span></a>
             </li>
         </ul>
