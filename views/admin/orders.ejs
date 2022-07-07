@@ -1,0 +1,33 @@
+<section class="orders ">
+    <div class="container mx-auto">
+        <h2 class="text-left">
+            All orders :
+        </h2>
+        <% if(messages.success){ %> 
+        <div id="success-alert" class="alert alert-success fw-bold text-center">
+            <p>  <%= messages.success %> </p>
+        </div>
+        <% } %> 
+        <div class="table-responsive">
+        <table class="table  table-hover table-striped">
+            <thead class="form_bg text-light">
+              <tr>
+              
+                <th scope="col">Orders</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Address</th>
+                <th scope="col">Status</th>
+                <th scope="col">Placed At</th>
+     
+              </tr>
+            </thead>
+            <tbody id="orderTableBody">
+        
+
+             
+            </tbody>
+          </table>
+        </div>
+    </div>
+    
+</section>

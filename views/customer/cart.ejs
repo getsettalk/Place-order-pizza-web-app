@@ -30,7 +30,8 @@
             </div>
         </div>
         <div class="card-footer footer-bg">
-            <form action="">
+            <% if(user) {%> 
+            <form action="/orders" method="post">
                 <div class="text-light">
                   <span>  Enter Order Delivery information:</span>
                 </div>
@@ -42,10 +43,15 @@
                        <input type="text" name="address" id="address" placeholder="Address" class="form-control" required>
                     </div>
                     <div class="col-12 text-center">
-                        <button type="submit">Check out</button>
+                        <button type="submit">order now</button>
                     </div>
                 </div>
             </form>
+            <% }else{ %> 
+                <div class=" text-center">
+                   <a href="/ac" class="btn btn-danger"> login to continue</a>
+                </div>
+            <% } %> 
         </div>
       </div>
 

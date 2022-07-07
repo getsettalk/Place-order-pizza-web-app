@@ -1,0 +1,47 @@
+<section class="orders ">
+        <div class="container mx-auto">
+            <h2 class="text-left">
+                All orders :
+            </h2>
+            <% if(messages.success){ %> 
+            <div id="success-alert" class="alert alert-success fw-bold text-center">
+                <p>  <%= messages.success %> </p>
+            </div>
+            <% } %> 
+            <div class="table-responsive">
+            <table class="table  table-hover table-striped">
+                <thead class="form_bg text-light">
+                  <tr>
+                  
+                    <th scope="col">Orders</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 <% if(orders.length){ %> 
+                    <% orders.forEach((order)=>{ %>
+
+                        <tr>
+                            <td> 
+                              <a href="/" class="link-warning text-decoration-none"> <%= order._id %> </a>
+                            </td>
+                            <td> <%= order.address %> </td>
+                            <td> <%= order.phone %> </td>
+                            <td> <%= moment(order.createdAt).format('h:mm:ss A') %> </td>
+                            <td> <%= moment(order.createdAt).format('DD-MM-YYYY') %> </td>
+                            </tr>
+
+                  <%  }) %> 
+             
+                  <% }else{  %>
+                     <tr>  <td colspan="3">No orders found</td> </tr>
+               <%   } %> 
+                </tbody>
+              </table>
+            </div>
+        </div>
+        
+</section>

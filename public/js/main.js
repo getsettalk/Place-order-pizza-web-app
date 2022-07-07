@@ -1,4 +1,5 @@
 // import  axios  from '../../node_modules/axios/index'
+// import {initAdmin} from './admin'
 
 let addToCart= document.querySelectorAll('.add-to-cart');
 const cardCounter = document.getElementById('cartCounter');
@@ -30,3 +31,13 @@ addToCart.forEach((btn)=>{
         updateCart(pizza);
     })
 })
+
+// deleting sucess message after palced order
+const alertMsg = document.querySelector('#success-alert');
+if(alertMsg){
+  setTimeout(()=>{
+    alertMsg.remove();
+  },3300)
+}
+initAdmin();
+
