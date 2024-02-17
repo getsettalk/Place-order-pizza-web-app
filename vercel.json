@@ -1,4 +1,4 @@
- {
+{
   "version": 2,
   "builds": [
     {
@@ -8,8 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "destination": "/"
+      "src": "/(.*)"
     }
   ]
 }
